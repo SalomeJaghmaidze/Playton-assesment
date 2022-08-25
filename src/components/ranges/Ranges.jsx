@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-function Input(props) {
+function Ranges(props) {
   const [input, setinput] = useState(10.0);
   function handleChange(event) {
     setinput(parseFloat(event.target.value));
@@ -40,7 +40,7 @@ function Input(props) {
   );
 }
 
-export default Input;
+export default Ranges;
 
 const Wrapper = styled.div`
   display: flex;

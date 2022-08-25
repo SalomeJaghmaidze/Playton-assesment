@@ -1,4 +1,6 @@
 import Dashboard from './components/dashboard/Dashboard';
+import Tabs from './components/tabs/Tabs';
+import Auto from './components/auto/Auto';
 import './App.css';
 
 
