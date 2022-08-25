@@ -1,20 +1,29 @@
 import React from "react";
 import Input from "../amount_input/Input";
+import Tabs from "../tabs/Tabs";
 import styled from "styled-components";
 
 function Dashboard() {
   return (
     <Container>
       <Content>
+      <Tabs></Tabs>
         <div>
-          <Input text="10.00₾"></Input>
-          <Input text="10.00x"></Input>
+          <Input
+            title="Auto Bet"
+            type="₾"
+            max="500"
+            amountStep="0.5"
+            tofixedValue="2"
+          ></Input>
+          <Input
+            title="Auto Cashout"
+            type="x"
+            max="30000"
+            amountStep="1"
+            tofixedValue="2"
+          ></Input>
         </div>
-        <div>
-          <Progress type="range" min="0" max="100" />
-          <Progress type="range" min="0" max="100" />
-        </div>
-
         <Btn>BET</Btn>
       </Content>
     </Container>
@@ -53,29 +62,7 @@ const Btn = styled.button`
   height: 72px;
   border-radius: 8px;
   font-size: 28px;
+  cursor: pointer;
 `;
 
-const Progress = styled.input`
-  width: 297px;
-  cursor: pointer;
-  -webkit-appearance: none;
-  height: 6px;
-  margin-bottom: 10px;
-  background: linear-gradient(
-    270deg,
-    #45397c 21.15%,
-    #ddd3f8 48.23%,
-    #44377b 83.65%
-  );
-  border-radius: 5px;
-  ::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 26px;
-    width: 26px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    border: 1px solid #214834;
-    box-shadow: 0px 0px 6px rgba(23, 174, 67, 0.8);
-    transition: background .3s ease-in-out;
-  }
-`;
+
