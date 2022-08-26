@@ -2,33 +2,33 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 function Ranges(props) {
-  const [input, setinput] = useState(10.0);
+  const [input, setInput] = useState(10.0);
   function handleChange(event) {
-    setinput(parseFloat(event.target.value));
+    setInput(parseFloat(event.target.value));
   }
-  function DeacreaseInput() {
+  function decreaseInput() {
     if (input > 0) {
-      setinput((prevInput) => prevInput - parseFloat(props.amountStep));
+      setInput((prevInput) => prevInput - parseFloat(props.amountStep));
     }
   }
-  function IncreaseInput() {
+  function increaseInput() {
     if (input < props.max) {
-      setinput((prevInput) => prevInput + parseFloat(props.amountStep));
+      setInput((prevInput) => prevInput + parseFloat(props.amountStep));
     }
   }
   return (
     <Wrapper>
       <Bar>
-        <Decrease onClick={DeacreaseInput}>-</Decrease>
+        <Decrease onClick={decreaseInput}>-</Decrease>
         <p>
-          {input.toFixed(props.tofixedValue)}
+          {input.toFixed(props.toFixedValue)}
           {props.type}
         </p>
-        <Increase onClick={IncreaseInput}>+</Increase>
+        <Increase onClick={increaseInput}>+</Increase>
       </Bar>
       <Title>{props.title}</Title>
       <div>
-        <Progress
+        <RangeBar
           type="range"
           min="0"
           max={props.max}
@@ -87,7 +87,7 @@ const Increase = styled.button`
   cursor: pointer;
 `;
 
-const Progress = styled.input`
+const RangeBar = styled.input`
   width: 297px;
   cursor: pointer;
   -webkit-appearance: none;

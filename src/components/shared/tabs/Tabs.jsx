@@ -1,28 +1,26 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Auto from "../auto/Auto";
-import Game from "../game/Game";
+import Auto from "../../dashboard/auto/Auto";
+import Game from "../../dashboard/game/Game";
 
 function Tabs() {
   const [activeTab, setActiveTab] = useState("tab2");
-  const handleTab1 = () => {
-    setActiveTab("tab1");
-  };
-  const handleTab2 = () => {
-    setActiveTab("tab2");
+
+  const handleTab = (tab) => {
+    setActiveTab(tab);
   };
   return (
     <Nav>
       <List>
         <li
           className={activeTab === "tab1" ? "active" : ""}
-          onClick={handleTab1}
+          onClick={() => handleTab("tab1")}
         >
           Game
         </li>
         <li
           className={activeTab === "tab2" ? "active" : ""}
-          onClick={handleTab2}
+          onClick={() => handleTab("tab2")}
         >
           Auto
         </li>
@@ -42,6 +40,10 @@ const Nav = styled.div`
   border-radius: 2rem;
   height: 36px;
   color: rgba(255, 255, 255, 0.3);
+
+  @media (max-width: 1008px) {
+    max-width: 400px;
+  }
 `;
 
 const List = styled.ul`

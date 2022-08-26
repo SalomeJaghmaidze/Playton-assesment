@@ -1,12 +1,11 @@
 import React from "react";
-import Tabs from "../tabs/Tabs";
+import Tabs from "../shared/tabs/Tabs";
 import styled from "styled-components";
 
 function Dashboard() {
   return (
     <Container>
       <Tabs></Tabs>
-      <Content></Content>
     </Container>
   );
 }
@@ -14,7 +13,7 @@ function Dashboard() {
 export default Dashboard;
 
 const Container = styled.div`
-  width: 689px;
+  max-width: 689px;
   height: 300px;
   background-color: #0e0826;
   border-radius: 8px;
@@ -24,6 +23,9 @@ const Container = styled.div`
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-`;
 
-const Content = styled.div``;
+  @media (max-width: 1008px) {
+    height: 430px;
+    max-width: 400px;
+  }
+`;
