@@ -1,18 +1,21 @@
 import React from "react";
 import Tabs from "../shared/tabs/Tabs";
 import styled from "styled-components";
+import Container from "react-bootstrap/Container";
 
 function Dashboard() {
   return (
     <Container>
-      <Tabs></Tabs>
+      <Content>
+        <Tabs></Tabs>
+      </Content>
     </Container>
   );
 }
 
 export default Dashboard;
 
-const Container = styled.div`
+const Content = styled.div`
   max-width: 689px;
   height: 300px;
   background-color: #0e0826;
@@ -26,6 +29,6 @@ const Container = styled.div`
 
   @media (max-width: 1008px) {
     height: 430px;
-    max-width: 400px;
+    width: 350px;
   }
 `;

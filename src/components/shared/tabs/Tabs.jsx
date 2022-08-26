@@ -42,7 +42,7 @@ const Nav = styled.div`
   color: rgba(255, 255, 255, 0.3);
 
   @media (max-width: 1008px) {
-    max-width: 400px;
+    max-width: 350px;
   }
 `;
 
@@ -62,6 +62,9 @@ const List = styled.ul`
     text-align: center;
     cursor: pointer;
     transition: all 0.7s;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
     font-size: 16px;
   }
 
@@ -76,4 +79,8 @@ const Outlet = styled.div`
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 1008px) {
+    top: 55%;
+  }
 `;

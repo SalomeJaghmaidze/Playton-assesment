@@ -34,7 +34,6 @@ const Content = styled.div`
     justify-content: space-between;
     margin-bottom: 10px;
   }
-  
 `;
 
 const Btn = styled.button`
@@ -54,8 +53,8 @@ const Btn = styled.button`
 `;
 
 const Section = styled.div`
-gap: 10px;
-@media (max-width: 1008px) {
-  flex-direction: column;
-}
-`
+  gap: 10px;
+  @media (max-width: 1008px) {
+    flex-direction: column;
+  }
+`;
